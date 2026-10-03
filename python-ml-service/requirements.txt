@@ -1,0 +1,14 @@
+fastapi==0.142.2
+uvicorn==0.54.0
+opencv-python-headless==5.0.0.93
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1
+requests==2.34.2
+joblib==1.6.0
+pydantic==2.13.5
+Pillow==12.3.0
+imagehash==4.3.2
+# torch and torchvision are installed separately in the Dockerfile
+# using the CPU-only wheel index to reduce image size:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu

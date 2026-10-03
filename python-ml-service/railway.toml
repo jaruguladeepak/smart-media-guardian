@@ -1,0 +1,18 @@
+# Railway deployment configuration for the MediaFlow AI Python ML backend
+# Docs: https://docs.railway.app/reference/config-as-code
+
+[build]
+# Railway auto-detects the Dockerfile in this directory
+# No additional build commands needed
+
+[deploy]
+# Number of replicas
+numReplicas = 1
+
+# Restart policy
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
+
+# Health check — Railway will ping this to confirm the service is alive
+healthcheckPath = "/docs"
+healthcheckTimeout = 30

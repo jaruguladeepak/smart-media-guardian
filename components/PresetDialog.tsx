@@ -1,0 +1,94 @@
+import { useState } from 'react';
+import { useAppStore } from '@/lib/store';
+import { X, BookmarkPlus } from 'lucide-react';
+import { toast } from 'sonner';
+
+interface PresetDialogProps {
+  onClose: () => void;
+  currentOptions: any;
+}
+
+export default function PresetDialog({ onClose, currentOptions }: PresetDialogProps) {
+  const { createPreset } = useAppStore();
+  const [name, setName] = useState('');
+
+  const handleCreate = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim()) return;
+    
+    createPreset({
+      name,
+      options: currentOptions,
+      description: `${currentOptions.width || 'Auto'} × ${currentOptions.height || 'Auto'}`,
+      icon: '✨'
+    });
+    
+    toast.success('Preset saved successfully');
+    onClose();
+  };
+
+  return (
+    <div className="fixed inset-0 z-[100] bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
+        
+        <div className="p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/50">
+          <h2 className="font-semibold text-lg text-slate-900 dark:text-white flex items-center">
+            <BookmarkPlus className="w-5 h-5 mr-2 text-indigo-500" /> 
+            Save Transformation Preset
+          </h2>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+
+        <div className="p-6">
+          <form onSubmit={handleCreate} className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Preset Name</label>
+              <input 
+                type="text"
+                required
+                autoFocus
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                placeholder="e.g. Website Hero Image"
+              />
+            </div>
+
+            <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4 border border-slate-100 dark:border-slate-700/50">
+              <h4 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
+                Saved Settings
+              </h4>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                {Object.entries(currentOptions).map(([k, v]) => (
+                  <div key={k} className="flex flex-col">
+                    <span className="text-slate-400 text-xs capitalize">{k}</span>
+                    <span className="font-medium text-slate-700 dark:text-slate-300">{String(v)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 pt-2">
+              <button 
+                type="button" 
+                onClick={onClose}
+                className="flex-1 px-4 py-2 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium rounded-xl hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+              >
+                Cancel
+              </button>
+              <button 
+                type="submit" 
+                disabled={!name.trim()}
+                className="flex-1 px-4 py-2 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-50"
+              >
+                Save Preset
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}

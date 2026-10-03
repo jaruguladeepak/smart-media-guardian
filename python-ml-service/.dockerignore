@@ -1,0 +1,20 @@
+# Development and test files
+venv/
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Training/development scripts (not needed for inference)
+train_model.py
+dynamic_trainer.py
+test_inference.py
+test_transformations.py
+
+# Development data and logs
+results.md
+human_feedback.json
+
+# Git
+.git/
+.gitignore
