@@ -68,7 +68,7 @@ export default function ClusteringPage({ mediaList }: ClusteringPageProps) {
  </div>
  ))}
  {cluster.items.length === 0 && (
- <div className="w-full h-full flex items-center justify-center text-sm text-slate-400">
+ <div className="w-full h-full flex items-center justify-center text-sm text-slate-500">
  No matching items in this dataset.
  </div>
  )}
@@ -76,7 +76,7 @@ export default function ClusteringPage({ mediaList }: ClusteringPageProps) {
  
  <button 
  disabled={cluster.items.length === 0}
- className="w-full py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-50 disabled:hover:bg-slate-100 text-slate-700 :bg-slate-700 font-medium rounded-lg text-sm transition-colors flex items-center justify-center"
+ className="w-full py-2 bg-slate-100 hover:bg-slate-200 disabled:opacity-50 disabled:hover:bg-slate-100 text-slate-700 :bg-slate-200 font-medium rounded-lg text-sm transition-colors flex items-center justify-center"
  >
  <FolderPlus className="w-4 h-4 mr-2" />
  Create Collection from Cluster

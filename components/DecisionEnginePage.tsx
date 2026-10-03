@@ -116,7 +116,7 @@ export default function DecisionEnginePage({ mediaList }: DecisionEnginePageProp
  {report.actions.map((action: any, i: number) => (
  <div key={i} className="flex items-center p-3 rounded-lg bg-slate-50 border border-slate-100 ">
  {action.status === 'approved' && <CheckCircle2 className="w-5 h-5 text-emerald-500 mr-3" />}
- {action.status === 'pending' && <CheckCircle2 className="w-5 h-5 text-slate-300 mr-3" />}
+ {action.status === 'pending' && <CheckCircle2 className="w-5 h-5 text-slate-600 mr-3" />}
  {action.status === 'warning' && <AlertTriangle className="w-5 h-5 text-amber-500 mr-3" />}
  
  <span className={`font-medium text-sm ${action.status === 'warning' ? 'text-amber-700 ' : 'text-slate-700 '}`}>
@@ -139,7 +139,7 @@ export default function DecisionEnginePage({ mediaList }: DecisionEnginePageProp
  </div>
  </div>
  
- <button className="w-full py-4 bg-slate-900 hover:bg-slate-800 :bg-white text-white font-bold rounded-xl transition-colors shadow-lg">
+ <button className="w-full py-4 bg-slate-50 hover:bg-slate-100 :bg-white text-slate-900 font-bold rounded-xl transition-colors shadow-lg">
  Execute Approved Actions
  </button>
  </div>

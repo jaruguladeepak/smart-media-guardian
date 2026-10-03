@@ -89,11 +89,11 @@ export default function Sidebar({ activeView, setActiveView }: SidebarProps) {
  onClick={() => setActiveView(link.id as ViewType)}
  className={`w-full flex items-center px-4 py-3 mb-1 rounded-xl text-sm font-medium transition-all ${
  isActive 
- ? 'bg-white/10 text-white font-semibold' 
- : 'text-white/70 hover:bg-white/5 hover:text-white'
+ ? 'bg-slate-200 text-slate-900 font-semibold' 
+ : 'text-slate-900/70 hover:bg-slate-100 hover:text-slate-900'
  }`}
  >
- <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${isActive ? 'bg-emerald-500/20 text-emerald-300' : 'text-white/60'}`}>
+ <div className={`w-8 h-8 rounded-full flex items-center justify-center mr-3 ${isActive ? 'bg-emerald-500/20 text-emerald-300' : 'text-slate-900/60'}`}>
  <Icon className="w-4 h-4" />
  </div>
  {link.label}
@@ -102,8 +102,8 @@ export default function Sidebar({ activeView, setActiveView }: SidebarProps) {
  };
 
  return (
- <aside className="absolute top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0 bg-[#050505] text-white flex flex-col sm:rounded-l-2xl border-r border-white/5 overflow-hidden shadow-2xl">
- <div className="h-20 flex items-center px-8 border-b border-white/5">
+ <aside className="absolute top-0 left-0 z-40 w-64 h-full transition-transform -translate-x-full sm:translate-x-0 bg-[#050505] text-slate-900 flex flex-col sm:rounded-l-2xl border-r border-slate-200 overflow-hidden shadow-2xl">
+ <div className="h-20 flex items-center px-8 border-b border-slate-200">
  <div className="flex items-center gap-3">
  <div className="w-8 h-8 grid grid-cols-2 gap-0.5 opacity-90">
  <div className="bg-indigo-500 rounded-sm"></div>
@@ -111,7 +111,7 @@ export default function Sidebar({ activeView, setActiveView }: SidebarProps) {
  <div className="bg-emerald-500 rounded-sm"></div>
  <div className="bg-indigo-400 rounded-sm"></div>
  </div>
- <span className="text-xl font-bold tracking-tight text-white">
+ <span className="text-xl font-bold tracking-tight text-slate-900">
  MediaFlow
  </span>
  </div>
@@ -165,7 +165,7 @@ export default function Sidebar({ activeView, setActiveView }: SidebarProps) {
  </div>
 
  <div>
- <h3 className="px-5 text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-3">
+ <h3 className="px-5 text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-3">
  System
  </h3>
  <nav>

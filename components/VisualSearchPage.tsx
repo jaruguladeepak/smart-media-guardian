@@ -64,11 +64,11 @@ export default function VisualSearchPage({ mediaList }: VisualSearchPageProps) {
  onKeyDown={(e) => e.key === 'Enter' && performSearch(searchQuery)}
  className="w-full pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-pink-500 transition-all "
  />
- <Search className="absolute left-4 top-3.5 w-5 h-5 text-slate-400" />
+ <Search className="absolute left-4 top-3.5 w-5 h-5 text-slate-500" />
  </div>
  <button 
  onClick={() => performSearch(searchQuery)}
- className="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-lg text-sm transition-colors shadow-sm flex items-center"
+ className="px-6 py-3 bg-pink-600 hover:bg-pink-700 text-slate-900 font-bold rounded-lg text-sm transition-colors shadow-sm flex items-center"
  >
  <Sparkles className="w-4 h-4 mr-2" /> Semantic Search
  </button>

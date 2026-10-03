@@ -128,7 +128,7 @@ export default function DatasetStudioPage() {
  className={`flex items-center p-3 border rounded-lg cursor-pointer transition-colors ${
  selectedModel === model 
  ? 'border-indigo-500 bg-indigo-50 shadow-sm' 
- : 'border-slate-200 hover:bg-slate-100 :bg-slate-800/50'
+ : 'border-slate-200 hover:bg-slate-100 :bg-slate-100/50'
  }`}
  >
  <input 
@@ -152,7 +152,7 @@ export default function DatasetStudioPage() {
  {isTraining ? (
  <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div>
  ) : (
- <BrainCircuit className="w-10 h-10 text-slate-400" />
+ <BrainCircuit className="w-10 h-10 text-slate-500" />
  )}
  </div>
  <h3 className="font-bold text-xl text-slate-700 mb-2">
@@ -165,7 +165,7 @@ export default function DatasetStudioPage() {
  <button 
  onClick={handleTrain}
  disabled={isTraining}
- className="flex items-center justify-center w-full max-w-xs py-3 px-6 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-bold rounded-lg transition-colors shadow-lg shadow-indigo-200 "
+ className="flex items-center justify-center w-full max-w-xs py-3 px-6 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold rounded-lg transition-colors shadow-lg shadow-indigo-200 "
  >
  {isTraining ? 'Processing...' : <><Play className="w-4 h-4 mr-2" /> Start Training</>}
  </button>
@@ -178,7 +178,7 @@ export default function DatasetStudioPage() {
  if (!trainingResults) {
  return (
  <div className="h-full flex flex-col items-center justify-center text-slate-500 py-20">
- <Activity className="w-12 h-12 mb-4 text-slate-300 " />
+ <Activity className="w-12 h-12 mb-4 text-slate-600 " />
  <p>No model trained yet. Go back to Train step.</p>
  </div>
  );
@@ -231,7 +231,7 @@ export default function DatasetStudioPage() {
  toast.success("Model registered to MLOps Registry");
  setCurrentStep(7);
  }}
- className="bg-slate-900 hover:bg-slate-800 text-white :bg-slate-100 font-bold py-2 px-4 rounded-lg text-sm transition-colors shadow-sm"
+ className="bg-slate-50 hover:bg-slate-100 text-slate-900 :bg-slate-100 font-bold py-2 px-4 rounded-lg text-sm transition-colors shadow-sm"
  >
  [Register Model]
  </button>
@@ -249,7 +249,7 @@ export default function DatasetStudioPage() {
  </thead>
  <tbody className="divide-y divide-slate-100 ">
  {models.filter(m => m !== model_type).slice(0, 3).map((m, idx) => (
- <tr key={m} className="text-slate-700 hover:bg-slate-50 :bg-slate-800/50">
+ <tr key={m} className="text-slate-700 hover:bg-slate-50 :bg-slate-100/50">
  <td className="py-3">{m}</td>
  <td className="py-3">{((metrics.accuracy - (0.05 + idx * 0.03)) * 100).toFixed(1)}%</td>
  <td className="py-3">{(metrics.f1_score - (0.06 + idx * 0.04)).toFixed(2)}</td>
@@ -345,8 +345,8 @@ export default function DatasetStudioPage() {
  <div className="animate-in fade-in duration-300">
  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
  <div className="flex items-center gap-3">
- <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-md">
- <Database className="w-5 h-5 text-white " />
+ <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shadow-md">
+ <Database className="w-5 h-5 text-slate-900 " />
  </div>
  <div>
  <h1 className="text-2xl font-bold tracking-tight text-slate-900 ">Dataset & Training Studio</h1>
@@ -358,13 +358,13 @@ export default function DatasetStudioPage() {
  <div className="flex bg-slate-100 p-1 rounded-lg border border-slate-200 shadow-inner">
  <button 
  onClick={() => { setDatasetType('synthetic'); setTrainingResults(null); setCurrentStep(5); }}
- className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${datasetType === 'synthetic' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700 :text-slate-300'}`}
+ className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all ${datasetType === 'synthetic' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700 :text-slate-600'}`}
  >
  Synthetic Baseline
  </button>
  <button 
  onClick={() => { setDatasetType('real'); setTrainingResults(null); setCurrentStep(5); }}
- className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all flex items-center ${datasetType === 'real' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700 :text-slate-300'}`}
+ className={`px-4 py-1.5 text-sm font-medium rounded-md transition-all flex items-center ${datasetType === 'real' ? 'bg-white text-slate-900 shadow-sm' : 'text-slate-500 hover:text-slate-700 :text-slate-600'}`}
  >
  Human-Annotated <span className="ml-2 w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
  </button>
@@ -388,12 +388,12 @@ export default function DatasetStudioPage() {
  >
  <div className={`w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300
  ${isActive ? 'border-indigo-600 bg-indigo-50 text-indigo-600 shadow-[0_0_15px_rgba(79,70,229,0.3)]' : 
- isPast ? 'border-emerald-500 bg-emerald-500 text-white shadow-[0_0_10px_rgba(16,185,129,0.2)]' : 
- 'border-slate-200 bg-white text-slate-400 '}
+ isPast ? 'border-emerald-500 bg-emerald-500 text-slate-900 shadow-[0_0_10px_rgba(16,185,129,0.2)]' : 
+ 'border-slate-200 bg-white text-slate-500 '}
  `}>
  {isPast ? <CheckCircle2 className="w-5 h-5" /> : <Icon className="w-5 h-5" />}
  </div>
- <span className={`text-xs mt-2 font-medium ${isActive ? 'text-indigo-600 ' : isPast ? 'text-emerald-600 ' : 'text-slate-400'}`}>
+ <span className={`text-xs mt-2 font-medium ${isActive ? 'text-indigo-600 ' : isPast ? 'text-emerald-600 ' : 'text-slate-500'}`}>
  {step.name}
  </span>
  </button>
@@ -417,7 +417,7 @@ export default function DatasetStudioPage() {
  {currentStep < 5 && (
  <div className="h-full flex flex-col items-center justify-center text-slate-500 py-20 animate-in fade-in">
  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
- <Filter className="w-6 h-6 text-slate-400" />
+ <Filter className="w-6 h-6 text-slate-500" />
  </div>
  <p>Step {currentStep} Configuration Area</p>
  <p className="text-sm mt-2">Proceed to Step 5 (Train) to run the pipeline dynamically.</p>

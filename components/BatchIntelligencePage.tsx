@@ -93,7 +93,7 @@ export default function BatchIntelligencePage() {
  <button 
  onClick={startBatch}
  disabled={isProcessing}
- className="w-full py-3 bg-slate-900 text-white font-bold rounded-lg transition-colors shadow-lg disabled:opacity-50 flex justify-center items-center"
+ className="w-full py-3 bg-slate-50 text-slate-900 font-bold rounded-lg transition-colors shadow-lg disabled:opacity-50 flex justify-center items-center"
  >
  {isProcessing ? 'Processing Batch...' : 'Run Full Pipeline'}
  </button>
@@ -123,8 +123,8 @@ export default function BatchIntelligencePage() {
  const isCurrent = progress > (i * (100 / steps.length)) && progress < stepThreshold;
  const isPending = progress === 0 || progress <= (i * (100 / steps.length));
  
- let colorClass = 'text-slate-400 border-slate-200 ';
- let iconColor = 'text-slate-300 ';
+ let colorClass = 'text-slate-500 border-slate-200 ';
+ let iconColor = 'text-slate-600 ';
  
  if (isCompleted || (progress === 100 && report)) {
  colorClass = 'text-emerald-700 border-emerald-500';
@@ -145,7 +145,7 @@ export default function BatchIntelligencePage() {
  )}
  </div>
  <div className={`py-1.5 ${isCurrent && isProcessing ? 'animate-pulse' : ''}`}>
- <h4 className={`text-sm font-bold ${isCompleted || isCurrent || (progress===100 && report) ? 'text-slate-900 ' : 'text-slate-400'}`}>
+ <h4 className={`text-sm font-bold ${isCompleted || isCurrent || (progress===100 && report) ? 'text-slate-900 ' : 'text-slate-500'}`}>
  {step.name}
  </h4>
  <p className="text-[10px] text-slate-500">{step.desc}</p>
@@ -245,7 +245,7 @@ export default function BatchIntelligencePage() {
  <p className="text-sm text-indigo-700 mb-4">
  The MediaFlow Decision Engine has prepared 136 automated actions across {totalAssets} assets based on the generated ML insights.
  </p>
- <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg text-sm transition-colors shadow">
+ <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-slate-900 font-bold rounded-lg text-sm transition-colors shadow">
  Review & Execute Actions
  </button>
  </div>
@@ -254,7 +254,7 @@ export default function BatchIntelligencePage() {
  ) : (
  <div className="bg-slate-50 rounded-xl border border-slate-200 p-6 flex flex-col items-center justify-center h-full text-center min-h-[500px]">
  <div className="w-20 h-20 bg-white rounded-full shadow-sm flex items-center justify-center mb-6">
- <Layers className="w-8 h-8 text-slate-300 " />
+ <Layers className="w-8 h-8 text-slate-600 " />
  </div>
  <h3 className="text-xl font-bold text-slate-700 mb-2">No Report Generated</h3>
  <p className="text-slate-500 max-w-sm">

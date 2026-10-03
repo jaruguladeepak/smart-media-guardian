@@ -104,10 +104,10 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  
  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
  <div className="flex gap-3">
- <button onClick={() => setActiveTab('transform')} className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl text-sm font-medium text-slate-900 transition-colors border border-slate-200 flex items-center gap-2">
+ <button onClick={() => setActiveTab('transform')} className="px-4 py-2 bg-slate-200 hover:bg-slate-300 backdrop-blur-md rounded-xl text-sm font-medium text-slate-900 transition-colors border border-slate-200 flex items-center gap-2">
  <Wand2 className="w-4 h-4" /> Transform
  </button>
- <button onClick={() => setActiveTab('export')} className="px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl text-sm font-medium text-slate-900 transition-colors border border-slate-200 flex items-center gap-2">
+ <button onClick={() => setActiveTab('export')} className="px-4 py-2 bg-slate-200 hover:bg-slate-300 backdrop-blur-md rounded-xl text-sm font-medium text-slate-900 transition-colors border border-slate-200 flex items-center gap-2">
  <Download className="w-4 h-4" /> Export
  </button>
  </div>
@@ -131,7 +131,7 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  <span className="text-slate-600">Quality Prediction</span>
  <span className="font-bold text-emerald-400">{intelligence ? (intelligence.quality?.prediction || 'Unknown') : '...'}</span>
  </div>
- <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+ <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
  <div className="h-full bg-emerald-400 rounded-full shadow-[0_0_10px_rgba(52,211,153,0.5)] transition-all" style={{width: intelligence ? `${(intelligence.quality?.probabilities?.[intelligence.quality?.prediction || ""] || 0) * 100}%` : '0%'}}></div>
  </div>
  </div>
@@ -141,7 +141,7 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  <span className="text-slate-600">Similarity Match</span>
  <span className="font-bold text-blue-400">{intelligence ? `${((intelligence.similarity?.score || 0) * 100).toFixed(1)}%` : '...'}</span>
  </div>
- <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden">
+ <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
  <div className="h-full bg-blue-400 rounded-full transition-all" style={{width: intelligence ? `${(intelligence.similarity?.score || 0) * 100}%` : '0%'}}></div>
  </div>
  </div>
@@ -151,10 +151,10 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  <span className="text-slate-600">Anomaly Level</span>
  <span className="font-bold text-slate-700">{intelligence ? ((intelligence.anomaly?.risk || 0) > 0.1 ? 'HIGH RISK' : 'LOW RISK') : '...'}</span>
  </div>
- <div className="w-full bg-white/5 rounded-full h-1.5 overflow-hidden flex gap-1">
+ <div className="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden flex gap-1">
  <div className={`h-full ${intelligence && (intelligence.anomaly?.risk || 0) > 0.05 ? 'bg-rose-400' : 'bg-slate-300'} rounded-full flex-1 transition-colors`}></div>
- <div className={`h-full ${intelligence && (intelligence.anomaly?.risk || 0) > 0.1 ? 'bg-rose-400' : 'bg-white/10'} rounded-full flex-1 transition-colors`}></div>
- <div className={`h-full ${intelligence && (intelligence.anomaly?.risk || 0) > 0.2 ? 'bg-rose-400' : 'bg-white/10'} rounded-full flex-1 transition-colors`}></div>
+ <div className={`h-full ${intelligence && (intelligence.anomaly?.risk || 0) > 0.1 ? 'bg-rose-400' : 'bg-slate-200'} rounded-full flex-1 transition-colors`}></div>
+ <div className={`h-full ${intelligence && (intelligence.anomaly?.risk || 0) > 0.2 ? 'bg-rose-400' : 'bg-slate-200'} rounded-full flex-1 transition-colors`}></div>
  </div>
  </div>
 
@@ -191,10 +191,10 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  }`}>
  {step.status === 'done' ? <CheckCircle2 className="w-3 h-3" /> : <div className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></div>}
  </div>
- {i < 6 && <div className={`w-px h-6 mt-1 ${step.status === 'done' ? 'bg-emerald-500/20' : 'bg-white/5'}`}></div>}
+ {i < 6 && <div className={`w-px h-6 mt-1 ${step.status === 'done' ? 'bg-emerald-500/20' : 'bg-slate-100'}`}></div>}
  </div>
  <div>
- <p className={`text-sm font-medium ${step.status === 'done' ? 'text-slate-200' : 'text-indigo-300'}`}>{step.label}</p>
+ <p className={`text-sm font-medium ${step.status === 'done' ? 'text-slate-700' : 'text-indigo-300'}`}>{step.label}</p>
  <p className="text-xs text-slate-500 mt-0.5 group-hover:text-slate-600 transition-colors">{step.desc}</p>
  </div>
  </div>
@@ -213,7 +213,7 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  <div className="flex items-center justify-between bg-transparent mb-2">
  <button 
  onClick={activeTab !== 'info' ? () => setActiveTab('info') : onBack}
- className="flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors px-3 py-1.5 rounded-lg border border-slate-200 bg-white/5 hover:bg-white/10"
+ className="flex items-center text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-100 hover:bg-slate-200"
  >
  <ArrowLeft className="w-4 h-4 mr-2" /> 
  {activeTab !== 'info' ? 'Back to AI Cockpit' : 'Back to Library'}
@@ -231,7 +231,7 @@ export default function MediaDetail({ media, onBack, onUpdate }: MediaDetailProp
  navigator.clipboard.writeText(url);
  toast.success('Share link copied to clipboard!');
  }}
- className="flex items-center px-3 py-1.5 bg-white/5 hover:bg-white/10 border border-slate-200 text-slate-900 rounded-lg text-sm font-medium transition-colors"
+ className="flex items-center px-3 py-1.5 bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-900 rounded-lg text-sm font-medium transition-colors"
  >
  <Share2 className="w-4 h-4 mr-1.5" />
  Share Asset

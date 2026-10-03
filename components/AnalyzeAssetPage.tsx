@@ -130,14 +130,14 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  <p className="text-slate-500 mb-6">Upload an image to begin</p>
  <button 
  onClick={onUploadClick}
- className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition-colors shadow-sm"
+ className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-slate-900 font-medium rounded-xl transition-colors shadow-sm"
  >
  Select Image
  </button>
  </div>
  
  <div className="max-w-md w-full">
- <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Models Ready</h3>
+ <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">Models Ready</h3>
  <div className="space-y-3 font-mono text-sm text-slate-600 ">
  <div className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> OpenCV</div>
  <div className="flex items-center gap-3"><CheckCircle2 className="w-4 h-4 text-emerald-500" /> Random Forest</div>
@@ -164,7 +164,7 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  <button 
  onClick={runAnalysis}
  disabled={isAnalyzing}
- className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors flex items-center justify-center disabled:opacity-50 shadow-md"
+ className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-slate-900 font-bold rounded-lg transition-colors flex items-center justify-center disabled:opacity-50 shadow-md"
  >
  {isAnalyzing ? (
  <><Loader2 className="w-5 h-5 mr-2 animate-spin" /> Analyzing Pipeline...</>
@@ -175,16 +175,16 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  </div>
  
  {showReport && (
- <div className="bg-slate-900 text-slate-300 border border-slate-800 rounded-xl p-5 shadow-sm font-mono text-[11px] animate-in slide-in-from-bottom-2">
- <div className="text-emerald-400 font-bold mb-3 uppercase tracking-widest border-b border-slate-800 pb-2">Execution Audit Trail</div>
+ <div className="bg-slate-50 text-slate-600 border border-slate-200 rounded-xl p-5 shadow-sm font-mono text-[11px] animate-in slide-in-from-bottom-2">
+ <div className="text-emerald-400 font-bold mb-3 uppercase tracking-widest border-b border-slate-200 pb-2">Execution Audit Trail</div>
  <div className="space-y-3">
  {auditTrail.map((log, i) => (
- <div key={i} className="flex flex-col border-l border-slate-700 pl-3 py-1">
- <div className="flex justify-between font-bold text-white mb-1">
+ <div key={i} className="flex flex-col border-l border-slate-300 pl-3 py-1">
+ <div className="flex justify-between font-bold text-slate-900 mb-1">
  <span>{log.stage}</span>
  <span className="text-slate-500">{log.latency}</span>
  </div>
- <div className="text-slate-400">{log.action}</div>
+ <div className="text-slate-500">{log.action}</div>
  <div className="text-indigo-300">→ {log.result}</div>
  </div>
  ))}
@@ -209,11 +209,11 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  ) : isCurrent ? (
  <Loader2 className="w-5 h-5 text-indigo-500 animate-spin" />
  ) : (
- <Circle className="w-5 h-5 text-slate-300 " />
+ <Circle className="w-5 h-5 text-slate-600 " />
  )}
  </div>
  <div className={`ml-3 font-bold tracking-wider transition-colors duration-300
- ${isCompleted ? 'text-slate-800 ' : isCurrent ? 'text-indigo-600 ' : 'text-slate-400 '}
+ ${isCompleted ? 'text-slate-800 ' : isCurrent ? 'text-indigo-600 ' : 'text-slate-500 '}
  `}>
  {step.label}
  </div>
@@ -227,16 +227,16 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  {/* Report output */}
  <div className="lg:col-span-1">
  {showReport ? (
- <div className="bg-[#0b0b10] text-slate-300 rounded-xl border border-white/10 shadow-2xl animate-in slide-in-from-bottom-4 font-mono text-xs h-full overflow-hidden flex flex-col">
- <div className="p-4 border-b border-white/10 bg-white/5">
- <div className="font-bold text-white tracking-widest uppercase mb-1">MEDIA INTELLIGENCE</div>
+ <div className="bg-slate-50 text-slate-600 rounded-xl border border-slate-200 shadow-2xl animate-in slide-in-from-bottom-4 font-mono text-xs h-full overflow-hidden flex flex-col">
+ <div className="p-4 border-b border-slate-200 bg-slate-100">
+ <div className="font-bold text-slate-900 tracking-widest uppercase mb-1">MEDIA INTELLIGENCE</div>
  <div className="text-indigo-400">{analysisResult?.asset?.filename || targetMedia?.publicId.split('/').pop()}</div>
  </div>
 
  <div className="overflow-y-auto p-4 space-y-6 custom-scrollbar flex-1">
  {/* QUALITY */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">QUALITY</div>
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">QUALITY</div>
  <div className="flex justify-between items-center mb-3">
  <span className="text-lg font-bold uppercase" style={{ color: analysisResult?.quality?.prediction === 'Excellent' ? '#34d399' : analysisResult?.quality?.prediction === 'Good' ? '#60a5fa' : analysisResult?.quality?.prediction === 'Average' ? '#fbbf24' : '#f87171' }}>
  {analysisResult?.quality?.prediction || 'Unknown'}
@@ -247,7 +247,7 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  </div>
  <div className="space-y-1">
  {['Poor', 'Average', 'Good', 'Excellent'].map(level => (
- <div key={level} className="flex justify-between text-slate-400">
+ <div key={level} className="flex justify-between text-slate-500">
  <span>{level}</span>
  <span>{((analysisResult?.quality?.probabilities[level] || 0) * 100).toFixed(1)}%</span>
  </div>
@@ -257,12 +257,12 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
 
  {/* COMPUTER VISION */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">COMPUTER VISION</div>
- <div className="grid grid-cols-1 gap-1 text-slate-400">
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">COMPUTER VISION</div>
+ <div className="grid grid-cols-1 gap-1 text-slate-500">
  {analysisResult?.features && Object.entries(analysisResult.features).map(([k, v]) => (
  <div key={k} className="flex justify-between">
  <span>{k}</span>
- <span className="text-white">{(v as number).toFixed(k === 'Resolution' ? 0 : 2)}</span>
+ <span className="text-slate-900">{(v as number).toFixed(k === 'Resolution' ? 0 : 2)}</span>
  </div>
  ))}
  </div>
@@ -270,12 +270,12 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
 
  {/* DEEP LEARNING */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">DEEP LEARNING</div>
- <div className="space-y-1 text-slate-400">
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">DEEP LEARNING</div>
+ <div className="space-y-1 text-slate-500">
  <div>ResNet-18</div>
  <div className="flex justify-between">
  <span>Top class: {analysisResult?.vision?.classification?.[0]?.label || 'Unknown'}</span>
- <span className="text-white">
+ <span className="text-slate-900">
  {((analysisResult?.vision?.classification?.[0]?.confidence || 0) * 100).toFixed(1)}%
  </span>
  </div>
@@ -285,18 +285,18 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
 
  {/* SIMILARITY */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">SIMILARITY</div>
- <div className="space-y-1 text-slate-400">
- <div>Closest asset: <span className="text-white">{analysisResult?.similarity?.closest_asset || 'None'}</span></div>
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">SIMILARITY</div>
+ <div className="space-y-1 text-slate-500">
+ <div>Closest asset: <span className="text-slate-900">{analysisResult?.similarity?.closest_asset || 'None'}</span></div>
  <div>Similarity: <span className="text-indigo-400 font-bold">{(analysisResult?.similarity?.score * 100).toFixed(1)}%</span></div>
  </div>
  </div>
 
  {/* ANOMALY */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">ANOMALY</div>
- <div className="space-y-1 text-slate-400">
- <div>Risk: <span className="text-white">{(analysisResult?.anomaly?.risk * 100).toFixed(1)}%</span></div>
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">ANOMALY</div>
+ <div className="space-y-1 text-slate-500">
+ <div>Risk: <span className="text-slate-900">{(analysisResult?.anomaly?.risk * 100).toFixed(1)}%</span></div>
  <div>Status: <span className={analysisResult?.anomaly?.risk > 0.1 ? 'text-amber-400 font-bold' : 'text-emerald-400 font-bold'}>
  {analysisResult?.anomaly?.risk > 0.1 ? 'REVIEW' : 'NORMAL'}
  </span></div>
@@ -305,8 +305,8 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
 
  {/* FEATURE CONTRIBUTION */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">FEATURE CONTRIBUTION</div>
- <div className="grid grid-cols-1 gap-1 text-slate-400">
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">FEATURE CONTRIBUTION</div>
+ <div className="grid grid-cols-1 gap-1 text-slate-500">
  {analysisResult?.xai?.map((exp: any, i: number) => (
  <div key={i} className="flex justify-between">
  <span>{exp.feature}</span>
@@ -320,7 +320,7 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
 
  {/* RECOMMENDATIONS */}
  <div>
- <div className="text-white font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-white/10 pb-1">RECOMMENDATIONS</div>
+ <div className="text-slate-900 font-bold tracking-widest uppercase mb-3 text-[10px] border-b border-slate-200 pb-1">RECOMMENDATIONS</div>
  <div className="space-y-2">
  {analysisResult?.decisions?.map((rec: string, i: number) => (
  <div key={i} className={`flex ${rec.startsWith('⚠') ? 'text-amber-400' : 'text-emerald-400'}`}>
@@ -333,7 +333,7 @@ export default function AnalyzeAssetPage({ mediaList, onUploadClick }: AnalyzeAs
  </div>
  ) : (
  <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm h-full flex flex-col items-center justify-center opacity-50">
- <Target className="w-12 h-12 text-slate-300 mb-4" />
+ <Target className="w-12 h-12 text-slate-600 mb-4" />
  <p className="text-slate-500 font-medium">Awaiting analysis...</p>
  </div>
  )}

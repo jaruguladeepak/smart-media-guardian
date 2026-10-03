@@ -16,8 +16,8 @@ export default function ExecutiveDashboardPage({ mediaList }: ExecutiveDashboard
  return (
  <div className="animate-in fade-in duration-300">
  <div className="flex items-center gap-3 mb-6">
- <div className="w-10 h-10 rounded-xl bg-slate-900 flex items-center justify-center shadow-md">
- <BarChart className="w-5 h-5 text-white " />
+ <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center shadow-md">
+ <BarChart className="w-5 h-5 text-slate-900 " />
  </div>
  <div>
  <h1 className="text-2xl font-bold tracking-tight text-slate-900 ">Media Intelligence Command Center</h1>
@@ -32,7 +32,7 @@ export default function ExecutiveDashboardPage({ mediaList }: ExecutiveDashboard
  <div className="text-3xl font-black text-slate-900 ">{totalAssets}</div>
  </div>
  <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center">
- <ImageIcon className="w-6 h-6 text-slate-400" />
+ <ImageIcon className="w-6 h-6 text-slate-500" />
  </div>
  </div>
  <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm flex items-center justify-between border-l-4 border-l-emerald-500">

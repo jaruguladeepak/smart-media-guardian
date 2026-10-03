@@ -78,7 +78,7 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  const selectedMediaNodes = mediaList.filter(m => selectedItems.includes(m.publicId));
 
  return (
- <div className="fixed inset-0 z-[100] bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+ <div className="fixed inset-0 z-[100] bg-slate-50/50 backdrop-blur-sm flex items-center justify-center p-4">
  <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
  
  {/* Header */}
@@ -90,7 +90,7 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  action === 'export' ? 'Bulk Export' : action === 'apply-preset' ? 'Apply Preset' : 'Bulk Processing'
  )}
  </h2>
- <button onClick={onClose} className="text-slate-400 hover:text-slate-600 :text-slate-200 transition-colors">
+ <button onClick={onClose} className="text-slate-500 hover:text-slate-600 :text-slate-700 transition-colors">
  <X className="w-5 h-5" />
  </button>
  </div>
@@ -128,7 +128,7 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  className={`w-full text-left p-3 rounded-xl border transition-colors flex items-center ${
  selectedPresetId === preset.id 
  ? 'border-indigo-500 bg-indigo-50 ' 
- : 'border-slate-200 hover:bg-slate-50 :bg-slate-800'
+ : 'border-slate-200 hover:bg-slate-50 :bg-slate-100'
  }`}
  >
  <span className="text-lg mr-3">{preset.icon || '⭐'}</span>
@@ -142,21 +142,21 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  </div>
  ) : (
  <div className="space-y-3">
- <label className="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 :bg-slate-800/50 transition-colors">
+ <label className="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 :bg-slate-100/50 transition-colors">
  <input type="checkbox" checked={options.analyze} onChange={(e) => setOptions({...options, analyze: e.target.checked})} className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" />
  <Sparkles className="w-4 h-4 ml-3 mr-2 text-blue-500" />
  <span className="text-sm font-medium text-slate-700 ">Run AI Analysis</span>
  </label>
  
- <label className="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 :bg-slate-800/50 transition-colors">
+ <label className="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 :bg-slate-100/50 transition-colors">
  <input type="checkbox" checked={options.optimize} onChange={(e) => setOptions({...options, optimize: e.target.checked})} className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" />
  <Wand2 className="w-4 h-4 ml-3 mr-2 text-amber-500" />
  <span className="text-sm font-medium text-slate-700 ">Smart Optimize (f_auto, q_auto)</span>
  </label>
  
- <label className="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 :bg-slate-800/50 transition-colors">
+ <label className="flex items-center p-3 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 :bg-slate-100/50 transition-colors">
  <input type="checkbox" checked={options.removeBackground} onChange={(e) => setOptions({...options, removeBackground: e.target.checked})} className="w-4 h-4 text-indigo-600 rounded border-slate-300 focus:ring-indigo-500" />
- <ImageIcon className="w-4 h-4 ml-3 mr-2 text-slate-400" />
+ <ImageIcon className="w-4 h-4 ml-3 mr-2 text-slate-500" />
  <span className="text-sm font-medium text-slate-700 ">Remove Background</span>
  </label>
  </div>
@@ -165,7 +165,7 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  <button
  onClick={handleProcess}
  disabled={action === 'apply-preset' && !selectedPresetId}
- className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition-colors mt-4 disabled:opacity-50"
+ className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-slate-900 font-medium rounded-xl transition-colors mt-4 disabled:opacity-50"
  >
  {action === 'export' ? `Generate ${selectedItems.length} Exports` : action === 'apply-preset' ? `Apply Preset to ${selectedItems.length} Files` : `Process ${selectedItems.length} Files`}
  </button>
@@ -193,9 +193,9 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  ) : i === progress ? (
  <Loader2 className="w-4 h-4 mr-2 text-indigo-500 animate-spin flex-shrink-0" />
  ) : (
- <Circle className="w-4 h-4 mr-2 text-slate-300 flex-shrink-0" />
+ <Circle className="w-4 h-4 mr-2 text-slate-600 flex-shrink-0" />
  )}
- <span className={`truncate ${i < progress ? 'text-slate-900 ' : i === progress ? 'text-indigo-600 font-medium' : 'text-slate-400 '}`}>
+ <span className={`truncate ${i < progress ? 'text-slate-900 ' : i === progress ? 'text-indigo-600 font-medium' : 'text-slate-500 '}`}>
  {media.publicId.split('/').pop()}
  </span>
  </div>
@@ -216,7 +216,7 @@ export default function BulkProcessor({ action, onClose, mediaList }: BulkProces
  clearSelection();
  onClose();
  }}
- className="w-full py-3 bg-slate-900 text-white font-medium rounded-xl hover:bg-slate-800 :bg-slate-100 transition-colors"
+ className="w-full py-3 bg-slate-50 text-slate-900 font-medium rounded-xl hover:bg-slate-100 :bg-slate-100 transition-colors"
  >
  Return to Library
  </button>

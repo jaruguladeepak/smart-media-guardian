@@ -135,13 +135,13 @@ export default function TransformStudio({ media }: TransformStudioProps) {
  <div className="flex border-b border-slate-200 ">
  <button
  onClick={() => setActiveTab('manual')}
- className={`pb-2 text-sm font-medium border-b-2 transition-colors px-4 ${activeTab === 'manual' ? 'border-indigo-500 text-indigo-600 ' : 'border-transparent text-slate-500 hover:text-slate-700 :text-slate-300'}`}
+ className={`pb-2 text-sm font-medium border-b-2 transition-colors px-4 ${activeTab === 'manual' ? 'border-indigo-500 text-indigo-600 ' : 'border-transparent text-slate-500 hover:text-slate-700 :text-slate-600'}`}
  >
  Manual Settings
  </button>
  <button
  onClick={() => setActiveTab('presets')}
- className={`pb-2 text-sm font-medium border-b-2 transition-colors px-4 ${activeTab === 'presets' ? 'border-indigo-500 text-indigo-600 ' : 'border-transparent text-slate-500 hover:text-slate-700 :text-slate-300'}`}
+ className={`pb-2 text-sm font-medium border-b-2 transition-colors px-4 ${activeTab === 'presets' ? 'border-indigo-500 text-indigo-600 ' : 'border-transparent text-slate-500 hover:text-slate-700 :text-slate-600'}`}
  >
  Presets
  </button>
@@ -159,7 +159,7 @@ export default function TransformStudio({ media }: TransformStudioProps) {
  <>
  <div>
  <h4 className="text-sm font-medium text-slate-900 mb-3 flex items-center">
- <ImageIcon className="w-4 h-4 mr-2 text-slate-400" /> Smart Crop (Content-Aware)
+ <ImageIcon className="w-4 h-4 mr-2 text-slate-500" /> Smart Crop (Content-Aware)
  </h4>
  <div className="flex flex-wrap gap-2">
  <button 
@@ -193,7 +193,7 @@ export default function TransformStudio({ media }: TransformStudioProps) {
  {media.resourceType === 'image' && (
  <div>
  <h4 className="text-sm font-medium text-slate-900 mb-3 flex items-center">
- <Wand2 className="w-4 h-4 mr-2 text-slate-400" /> AI Background
+ <Wand2 className="w-4 h-4 mr-2 text-slate-500" /> AI Background
  </h4>
  <button 
  onClick={() => {
@@ -205,9 +205,9 @@ export default function TransformStudio({ media }: TransformStudioProps) {
  description: newBgRemoval ? 'Applied Background Removal' : 'Reverted Background Removal',
  });
  }}
- className={`px-4 py-2 text-sm font-medium rounded-md border flex items-center transition-colors ${options.backgroundRemoval ? 'bg-indigo-600 border-indigo-600 text-white shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 :bg-slate-700'}`}
+ className={`px-4 py-2 text-sm font-medium rounded-md border flex items-center transition-colors ${options.backgroundRemoval ? 'bg-indigo-600 border-indigo-600 text-slate-900 shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-50 :bg-slate-200'}`}
  >
- <Wand2 className={`w-4 h-4 mr-2 ${options.backgroundRemoval ? 'text-indigo-200' : 'text-slate-400'}`} />
+ <Wand2 className={`w-4 h-4 mr-2 ${options.backgroundRemoval ? 'text-indigo-200' : 'text-slate-500'}`} />
  {options.backgroundRemoval ? 'Background Removed' : 'Remove Background'}
  </button>
  </div>
@@ -260,7 +260,7 @@ export default function TransformStudio({ media }: TransformStudioProps) {
  <button 
  onClick={handleApply}
  disabled={!hasChanges}
- className="flex-1 flex items-center justify-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+ className="flex-1 flex items-center justify-center px-4 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-slate-900 font-medium rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
  >
  <Check className="w-4 h-4 mr-2" /> Apply Transformation
  </button>
@@ -268,7 +268,7 @@ export default function TransformStudio({ media }: TransformStudioProps) {
  {hasChanges && (
  <button
  onClick={() => setShowPresetDialog(true)}
- className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 :bg-slate-700 text-slate-700 font-medium rounded-xl transition-colors"
+ className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 :bg-slate-200 text-slate-700 font-medium rounded-xl transition-colors"
  >
  Save as Preset
  </button>

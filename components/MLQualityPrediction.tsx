@@ -50,7 +50,7 @@ export default function MLQualityPrediction({ media }: MLQualityPredictionProps)
  return (
  <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm">
  <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">ML Quality Prediction</h3>
- <div className="text-sm text-slate-400 p-3 bg-slate-50 rounded-lg">
+ <div className="text-sm text-slate-500 p-3 bg-slate-50 rounded-lg">
  Python ML service is not running. Start the service to enable Media Quality ML predictions.
  </div>
  </div>
@@ -79,7 +79,7 @@ export default function MLQualityPrediction({ media }: MLQualityPredictionProps)
  <div className={`text-3xl font-extrabold uppercase tracking-tight ${qualityColor} drop-shadow-sm mb-1`}>
  {data.prediction}
  </div>
- <div className="text-xs text-slate-400 flex items-center justify-center gap-1">
+ <div className="text-xs text-slate-500 flex items-center justify-center gap-1">
  <BarChart2 className="w-3 h-3" />
  Random Forest Classifier
  </div>
@@ -88,7 +88,7 @@ export default function MLQualityPrediction({ media }: MLQualityPredictionProps)
  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
  {/* Features Block */}
  <div className="space-y-3">
- <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 pb-1">
+ <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-100 pb-1">
  Image Features
  </div>
  <div className="grid grid-cols-1 gap-1.5">
@@ -105,7 +105,7 @@ export default function MLQualityPrediction({ media }: MLQualityPredictionProps)
 
  {/* Probabilities Block */}
  <div className="space-y-3">
- <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 pb-1">
+ <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-100 pb-1">
  Probabilities
  </div>
  <div className="grid grid-cols-1 gap-1.5">

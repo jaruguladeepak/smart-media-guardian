@@ -9,7 +9,7 @@ interface GlobalStatusBarProps {
 
 export default function GlobalStatusBar({ isProcessing }: { isProcessing?: boolean }) {
  return (
- <div className="h-8 border-t border-white/10 bg-[#050505] flex items-center justify-between px-4 text-[11px] font-medium text-slate-400 tracking-wide z-40 relative">
+ <div className="h-8 border-t border-slate-200 bg-[#050505] flex items-center justify-between px-4 text-[11px] font-medium text-slate-500 tracking-wide z-40 relative">
  <div className="flex items-center gap-6">
  <div className="flex items-center gap-1.5 text-emerald-400">
  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
@@ -23,7 +23,7 @@ export default function GlobalStatusBar({ isProcessing }: { isProcessing?: boole
  <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
  Vision Model READY
  </div>
- <div className={`flex items-center gap-1.5 ${isProcessing ? 'text-indigo-400' : 'text-slate-400'}`}>
+ <div className={`flex items-center gap-1.5 ${isProcessing ? 'text-indigo-400' : 'text-slate-500'}`}>
  <span className={`w-2 h-2 rounded-full ${isProcessing ? 'bg-indigo-500 animate-pulse' : 'bg-slate-500'}`}></span>
  Pipeline {isProcessing ? 'PROCESSING' : 'IDLE'}
  </div>

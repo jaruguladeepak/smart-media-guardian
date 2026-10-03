@@ -110,10 +110,10 @@ export default function DemoCommandCenter({ onNavigate }: DemoCommandCenterProps
  <div 
  key={step.id}
  onClick={step.action}
- className={`p-6 flex items-center justify-between group cursor-pointer transition-colors ${step.isComplete ? 'hover:bg-slate-50 :bg-slate-800/50' : 'hover:bg-indigo-50/50 :bg-indigo-900/10'}`}
+ className={`p-6 flex items-center justify-between group cursor-pointer transition-colors ${step.isComplete ? 'hover:bg-slate-50 :bg-slate-100/50' : 'hover:bg-indigo-50/50 :bg-indigo-900/10'}`}
  >
  <div className="flex items-center gap-6">
- <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${step.isComplete ? 'bg-emerald-100 text-emerald-600 ' : 'bg-slate-100 text-slate-400 group-hover:bg-indigo-100 group-hover:text-indigo-600 :bg-indigo-900/50 :text-indigo-400'}`}>
+ <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors ${step.isComplete ? 'bg-emerald-100 text-emerald-600 ' : 'bg-slate-100 text-slate-500 group-hover:bg-indigo-100 group-hover:text-indigo-600 :bg-indigo-900/50 :text-indigo-400'}`}>
  {step.isComplete ? <CheckCircle2 className="w-6 h-6" /> : <step.icon className="w-6 h-6" />}
  </div>
  <div>

@@ -12,7 +12,7 @@ export default function MlOpsCenterPage() {
  <GitBranch className="w-5 h-5 mr-2 text-indigo-500" />
  Model Registry
  </h3>
- <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-sm font-medium transition-colors flex items-center shadow-sm">
+ <button className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-slate-900 rounded-lg text-sm font-medium transition-colors flex items-center shadow-sm">
  <Upload className="w-4 h-4 mr-2" />
  Import Model
  </button>
@@ -115,7 +115,7 @@ export default function MlOpsCenterPage() {
  { time: '10:22:11 AM', id: 'campaign_asset_1', ver: 'v3.2.0', pred: 'AVERAGE', conf: 0.62, time_ms: 177 },
  { time: '09:14:05 AM', id: 'product_shot_9', ver: 'v3.2.0', pred: 'GOOD', conf: 0.82, time_ms: 148 },
  ].map((log, i) => (
- <tr key={i} className="hover:bg-slate-50 :bg-slate-800/30 transition-colors">
+ <tr key={i} className="hover:bg-slate-50 :bg-slate-100/30 transition-colors">
  <td className="px-6 py-4 text-slate-500 font-mono text-xs">{log.time}</td>
  <td className="px-6 py-4 font-medium text-indigo-600 ">{log.id}</td>
  <td className="px-6 py-4">
@@ -149,13 +149,13 @@ export default function MlOpsCenterPage() {
  </span>
  </div>
 
- <div className="bg-slate-900 text-slate-300 border border-slate-800 rounded-xl p-8 shadow-sm font-mono text-sm flex justify-center">
+ <div className="bg-slate-50 text-slate-600 border border-slate-200 rounded-xl p-8 shadow-sm font-mono text-sm flex justify-center">
  <div className="flex flex-col items-center text-center space-y-2">
  <div className="text-emerald-400 font-bold tracking-widest">TRAINING BASELINE</div>
  <div className="text-slate-500">↓</div>
  <div className="text-indigo-400 font-bold tracking-widest">PRODUCTION DATA</div>
  <div className="text-slate-500">↓</div>
- <div className="text-white tracking-widest">Drift Detection</div>
+ <div className="text-slate-900 tracking-widest">Drift Detection</div>
  <div className="text-slate-500">↓</div>
  
  <div className="border border-rose-500 px-4 py-2 mt-2 mb-2 text-rose-400 font-bold bg-rose-500/10">
@@ -165,13 +165,13 @@ export default function MlOpsCenterPage() {
  </div>
  
  <div className="text-slate-500">↓</div>
- <div className="text-white tracking-widest">Human Review</div>
+ <div className="text-slate-900 tracking-widest">Human Review</div>
  <div className="text-slate-500">↓</div>
  <div className="text-teal-400 font-bold tracking-widest">Dataset v3</div>
  <div className="text-slate-500">↓</div>
- <div className="text-white tracking-widest">Retrain</div>
+ <div className="text-slate-900 tracking-widest">Retrain</div>
  <div className="text-slate-500">↓</div>
- <div className="text-white tracking-widest">Evaluate</div>
+ <div className="text-slate-900 tracking-widest">Evaluate</div>
  <div className="text-slate-500">↓</div>
  <div className="text-emerald-400 font-bold tracking-widest">Register Model</div>
  <div className="text-slate-500">↓</div>
@@ -199,7 +199,7 @@ export default function MlOpsCenterPage() {
  <p className="text-slate-500 max-w-md mb-8 text-sm">
  These assets were flagged because the model prediction confidence fell below the 70% threshold. Your corrections will be added to the feedback dataset for retraining.
  </p>
- <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-lg transition-colors shadow-lg shadow-indigo-200 flex items-center">
+ <button className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-slate-900 font-bold rounded-lg transition-colors shadow-lg shadow-indigo-200 flex items-center">
  Start Review Session <ArrowRight className="w-4 h-4 ml-2" />
  </button>
  </div>
@@ -231,7 +231,7 @@ export default function MlOpsCenterPage() {
  className={`flex items-center py-3 px-6 text-sm font-bold border-b-2 transition-colors whitespace-nowrap ${
  activeTab === tab.id
  ? 'border-indigo-500 text-indigo-600 '
- : 'border-transparent text-slate-500 hover:text-slate-700 :text-slate-300'
+ : 'border-transparent text-slate-500 hover:text-slate-700 :text-slate-600'
  }`}
  >
  <tab.icon className="w-4 h-4 mr-2" />

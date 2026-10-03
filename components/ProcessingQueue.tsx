@@ -30,7 +30,7 @@ export default function ProcessingQueue() {
 
  <div className="divide-y divide-slate-100 ">
  {demoMode && (
- <div className="p-4 flex items-center justify-between hover:bg-slate-50 :bg-slate-800/50 transition-colors">
+ <div className="p-4 flex items-center justify-between hover:bg-slate-50 :bg-slate-100/50 transition-colors">
  <div className="flex items-center gap-4">
  <div className="w-10 h-10 rounded-lg bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
  <XCircle className="w-5 h-5" />
@@ -41,8 +41,8 @@ export default function ProcessingQueue() {
  </div>
  </div>
  <div className="flex items-center gap-3">
- <span className="text-xs text-slate-400">Just now</span>
- <button className="flex items-center px-3 py-1.5 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded-lg shadow-sm hover:bg-slate-50 :bg-slate-700">
+ <span className="text-xs text-slate-500">Just now</span>
+ <button className="flex items-center px-3 py-1.5 text-sm font-medium text-slate-600 bg-white border border-slate-200 rounded-lg shadow-sm hover:bg-slate-50 :bg-slate-200">
  <RotateCcw className="w-4 h-4 mr-1.5" /> Retry
  </button>
  </div>
@@ -50,7 +50,7 @@ export default function ProcessingQueue() {
  )}
 
  {activities.length > 0 ? activities.slice(0, 10).map(activity => (
- <div key={activity.id} className="p-4 flex items-center justify-between hover:bg-slate-50 :bg-slate-800/50 transition-colors">
+ <div key={activity.id} className="p-4 flex items-center justify-between hover:bg-slate-50 :bg-slate-100/50 transition-colors">
  <div className="flex items-center gap-4">
  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center flex-shrink-0">
  <CheckCircle2 className="w-5 h-5" />
@@ -61,7 +61,7 @@ export default function ProcessingQueue() {
  </div>
  </div>
  <div className="flex items-center gap-3">
- <span className="text-xs text-slate-400">
+ <span className="text-xs text-slate-500">
  {new Date(activity.timestamp).toLocaleTimeString()}
  </span>
  <span className="px-2.5 py-1 text-xs font-medium bg-emerald-50 text-emerald-700 rounded-full ">

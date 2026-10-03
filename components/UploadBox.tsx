@@ -67,7 +67,7 @@ export default function UploadBox({ onUploadSuccess }: { onUploadSuccess?: (data
  className={`relative group border-2 border-dashed rounded-2xl p-16 text-center transition-all duration-300 ease-in-out ${
  isDragging
  ? 'border-indigo-500 bg-indigo-50/50 scale-[1.02]'
- : 'border-slate-300 hover:border-indigo-400 :border-indigo-500 hover:bg-slate-50/50 :bg-slate-800/50'
+ : 'border-slate-300 hover:border-indigo-400 :border-indigo-500 hover:bg-slate-50/50 :bg-slate-100/50'
  }`}
  onDragOver={onDragOver}
  onDragLeave={onDragLeave}
@@ -95,7 +95,7 @@ export default function UploadBox({ onUploadSuccess }: { onUploadSuccess?: (data
  onChange={onFileChange}
  disabled={isUploading}
  />
- <div className="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
+ <div className="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-slate-900 text-sm font-medium rounded-xl transition-all shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed">
  {isUploading ? (
  <>
  <Loader2 className="w-5 h-5 mr-2 animate-spin" />

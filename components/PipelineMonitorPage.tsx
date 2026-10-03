@@ -27,13 +27,13 @@ export default function PipelineMonitorPage() {
  <div className="animate-in fade-in duration-500 h-full flex flex-col font-mono text-sm">
  <div className="flex items-center justify-between mb-6">
  <div>
- <h1 className="text-xl font-bold tracking-widest text-white uppercase flex items-center gap-2">
+ <h1 className="text-xl font-bold tracking-widest text-slate-900 uppercase flex items-center gap-2">
  <Server className="w-5 h-5 text-indigo-400" />
  MediaFlow Pipeline Monitor
  </h1>
  <p className="text-slate-500 text-xs mt-1">Real-time observability • v5.0.0-stable</p>
  </div>
- <div className="flex items-center gap-3 bg-[#111118] px-3 py-1.5 rounded-lg border border-emerald-500/20">
+ <div className="flex items-center gap-3 bg-slate-50 px-3 py-1.5 rounded-lg border border-emerald-500/20">
  <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
  <span className="text-emerald-400 font-bold text-xs uppercase tracking-widest">System Operational</span>
  </div>
@@ -42,9 +42,9 @@ export default function PipelineMonitorPage() {
  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 flex-shrink-0">
  
  {/* Pipeline Health */}
- <div className="bg-[#0b0b10] rounded-xl border border-white/10 p-5 shadow-2xl relative overflow-hidden">
+ <div className="bg-slate-50 rounded-xl border border-slate-200 p-5 shadow-2xl relative overflow-hidden">
  <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
- <h3 className="font-bold text-white mb-6 uppercase tracking-widest text-xs flex items-center border-b border-white/10 pb-3">
+ <h3 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs flex items-center border-b border-slate-200 pb-3">
  <Activity className="w-4 h-4 mr-2 text-indigo-400" />
  Pipeline Health
  </h3>
@@ -57,14 +57,14 @@ export default function PipelineMonitorPage() {
  { label: 'Task Queue', status: 'Operational', ping: '5ms' },
  ].map((svc, i) => (
  <div key={i} className="flex justify-between items-center group">
- <span className="text-slate-400 w-40">{svc.label}</span>
- <span className="flex-1 border-b border-dashed border-white/10 mx-4 opacity-50"></span>
+ <span className="text-slate-500 w-40">{svc.label}</span>
+ <span className="flex-1 border-b border-dashed border-slate-200 mx-4 opacity-50"></span>
  <div className="flex items-center gap-3">
  <span className="text-emerald-400 flex items-center gap-2">
  <div className="w-1.5 h-1.5 rounded-full bg-emerald-400"></div>
  {svc.status}
  </span>
- <span className="text-slate-600 text-xs w-10 text-right group-hover:text-slate-400 transition-colors">{svc.ping}</span>
+ <span className="text-slate-600 text-xs w-10 text-right group-hover:text-slate-500 transition-colors">{svc.ping}</span>
  </div>
  </div>
  ))}
@@ -72,27 +72,27 @@ export default function PipelineMonitorPage() {
  </div>
 
  {/* Latency */}
- <div className="bg-[#0b0b10] rounded-xl border border-white/10 p-5 shadow-2xl relative overflow-hidden">
+ <div className="bg-slate-50 rounded-xl border border-slate-200 p-5 shadow-2xl relative overflow-hidden">
  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
- <h3 className="font-bold text-white mb-6 uppercase tracking-widest text-xs flex items-center border-b border-white/10 pb-3">
+ <h3 className="font-bold text-slate-900 mb-6 uppercase tracking-widest text-xs flex items-center border-b border-slate-200 pb-3">
  <Clock className="w-4 h-4 mr-2 text-amber-400" />
  Latency Breakdown
  </h3>
  <div className="space-y-3 relative z-10">
  {pipelineMetrics.map((metric, i) => (
  <div key={i} className="flex justify-between items-center">
- <span className="text-slate-400 w-32">{metric.name.split(' ')[0]}</span>
- <div className="flex-1 mx-4 h-1.5 bg-white/5 rounded-full overflow-hidden">
+ <span className="text-slate-500 w-32">{metric.name.split(' ')[0]}</span>
+ <div className="flex-1 mx-4 h-1.5 bg-slate-100 rounded-full overflow-hidden">
  <div 
  className="h-full bg-indigo-500/50 rounded-full" 
  style={{ width: `${(metric.time / 800) * 100}%` }}
  ></div>
  </div>
- <span className="text-slate-300 w-16 text-right">{metric.time}ms</span>
+ <span className="text-slate-600 w-16 text-right">{metric.time}ms</span>
  </div>
  ))}
- <div className="pt-3 mt-3 border-t border-white/10 flex justify-between items-center font-bold">
- <span className="text-white">Total Time</span>
+ <div className="pt-3 mt-3 border-t border-slate-200 flex justify-between items-center font-bold">
+ <span className="text-slate-900">Total Time</span>
  <span className="text-amber-400 text-lg">{(totalProcessingTime / 1000).toFixed(2)}s</span>
  </div>
  </div>
@@ -101,9 +101,9 @@ export default function PipelineMonitorPage() {
  </div>
 
  {/* Live Stream */}
- <div className="bg-[#0b0b10] rounded-xl border border-white/10 shadow-2xl flex-1 flex flex-col min-h-0 relative overflow-hidden">
- <div className="p-4 border-b border-white/10 flex justify-between items-center bg-[#111118]/50">
- <h3 className="font-bold text-white flex items-center text-xs uppercase tracking-widest">
+ <div className="bg-slate-50 rounded-xl border border-slate-200 shadow-2xl flex-1 flex flex-col min-h-0 relative overflow-hidden">
+ <div className="p-4 border-b border-slate-200 flex justify-between items-center bg-slate-50/50">
+ <h3 className="font-bold text-slate-900 flex items-center text-xs uppercase tracking-widest">
  <Zap className="w-4 h-4 mr-2 text-indigo-400" />
  Live Execution Stream
  </h3>
@@ -116,10 +116,10 @@ export default function PipelineMonitorPage() {
  
  <div className="flex-1 overflow-y-auto p-4 custom-scrollbar space-y-1">
  {recentJobs.map((job) => (
- <div key={job.id} className="flex items-center py-2 px-3 hover:bg-white/5 rounded transition-colors group">
+ <div key={job.id} className="flex items-center py-2 px-3 hover:bg-slate-100 rounded transition-colors group">
  <span className="text-slate-500 w-24">{job.timestamp.split(' ')[0]}</span>
  <span className="text-indigo-400 w-24 font-bold">{job.id}</span>
- <span className="text-slate-300 flex-1 truncate">{job.asset}</span>
+ <span className="text-slate-600 flex-1 truncate">{job.asset}</span>
  
  {job.status === 'completed' ? (
  <span className="text-emerald-400 w-24 flex items-center">
@@ -131,7 +131,7 @@ export default function PipelineMonitorPage() {
  </span>
  )}
  
- <span className="text-slate-500 w-16 text-right group-hover:text-slate-300">{job.time}</span>
+ <span className="text-slate-500 w-16 text-right group-hover:text-slate-600">{job.time}</span>
  </div>
  ))}
  

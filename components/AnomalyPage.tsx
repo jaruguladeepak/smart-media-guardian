@@ -75,7 +75,7 @@ export default function AnomalyPage({ mediaList, onUploadClick }: AnomalyPagePro
  ) : (
  <div className="w-full h-full bg-slate-200 "></div>
  )}
- <div className="absolute inset-x-0 bottom-0 bg-red-600 text-white text-[10px] text-center py-1 font-bold">
+ <div className="absolute inset-x-0 bottom-0 bg-red-600 text-slate-900 text-[10px] text-center py-1 font-bold">
  ANOMALY
  </div>
  </div>

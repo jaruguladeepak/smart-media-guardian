@@ -118,7 +118,7 @@ export default function ModerationCenter({ mediaList, onSelectMedia, onUpdateMed
  {media.moderation?.status !== 'safe' && (
  <button 
  onClick={(e) => { e.stopPropagation(); handleMarkSafe(media); }}
- className="bg-emerald-500 hover:bg-emerald-600 text-white p-2 rounded-lg shadow-sm"
+ className="bg-emerald-500 hover:bg-emerald-600 text-slate-900 p-2 rounded-lg shadow-sm"
  title="Mark as Safe"
  >
  <CheckCircle className="w-4 h-4" />
@@ -127,7 +127,7 @@ export default function ModerationCenter({ mediaList, onSelectMedia, onUpdateMed
  {media.moderation?.status !== 'flagged' && (
  <button 
  onClick={(e) => { e.stopPropagation(); handleFlag(media); }}
- className="bg-red-500 hover:bg-red-600 text-white p-2 rounded-lg shadow-sm"
+ className="bg-red-500 hover:bg-red-600 text-slate-900 p-2 rounded-lg shadow-sm"
  title="Flag Media"
  >
  <AlertTriangle className="w-4 h-4" />
@@ -139,7 +139,7 @@ export default function ModerationCenter({ mediaList, onSelectMedia, onUpdateMed
  </div>
  ) : (
  <div className="bg-white rounded-xl p-12 text-center text-slate-500 border border-slate-200 border-dashed">
- <ShieldCheck className="w-12 h-12 mx-auto text-slate-300 mb-4" />
+ <ShieldCheck className="w-12 h-12 mx-auto text-slate-600 mb-4" />
  <h3 className="text-lg font-medium text-slate-900 mb-1">All clear!</h3>
  <p>No media found in this moderation category.</p>
  </div>

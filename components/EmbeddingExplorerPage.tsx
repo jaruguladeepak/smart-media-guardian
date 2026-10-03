@@ -147,7 +147,7 @@ export default function EmbeddingExplorerPage({ mediaList }: EmbeddingExplorerPa
  </ul>
  
  <div className="mt-auto">
- <button className="w-full py-2 bg-slate-100 hover:bg-slate-200 :bg-slate-700 text-slate-700 font-medium rounded-lg text-sm transition-colors flex items-center justify-center">
+ <button className="w-full py-2 bg-slate-100 hover:bg-slate-200 :bg-slate-200 text-slate-700 font-medium rounded-lg text-sm transition-colors flex items-center justify-center">
  <ZoomIn className="w-4 h-4 mr-2" />
  Reset View
  </button>

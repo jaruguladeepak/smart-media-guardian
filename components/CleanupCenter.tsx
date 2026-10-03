@@ -47,21 +47,21 @@ export default function CleanupCenter() {
  <div className="flex space-x-2 mb-8 bg-white p-1 rounded-xl border border-slate-200 shadow-sm w-fit">
  <button
  onClick={() => setActiveTab('duplicates')}
- className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === 'duplicates' ? 'bg-amber-100 text-amber-700 ' : 'text-slate-600 hover:bg-slate-50 :bg-slate-800'}`}
+ className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === 'duplicates' ? 'bg-amber-100 text-amber-700 ' : 'text-slate-600 hover:bg-slate-50 :bg-slate-100'}`}
  >
  <ImageIcon className="w-4 h-4 mr-2" />
  Duplicates <span className="ml-2 bg-white px-1.5 py-0.5 rounded text-xs">{duplicates.length}</span>
  </button>
  <button
  onClick={() => setActiveTab('unoptimized')}
- className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === 'unoptimized' ? 'bg-amber-100 text-amber-700 ' : 'text-slate-600 hover:bg-slate-50 :bg-slate-800'}`}
+ className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === 'unoptimized' ? 'bg-amber-100 text-amber-700 ' : 'text-slate-600 hover:bg-slate-50 :bg-slate-100'}`}
  >
  <FileWarning className="w-4 h-4 mr-2" />
  Unoptimized <span className="ml-2 bg-white px-1.5 py-0.5 rounded text-xs">{unoptimized.length}</span>
  </button>
  <button
  onClick={() => setActiveTab('metadata')}
- className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === 'metadata' ? 'bg-amber-100 text-amber-700 ' : 'text-slate-600 hover:bg-slate-50 :bg-slate-800'}`}
+ className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeTab === 'metadata' ? 'bg-amber-100 text-amber-700 ' : 'text-slate-600 hover:bg-slate-50 :bg-slate-100'}`}
  >
  <Search className="w-4 h-4 mr-2" />
  Missing Tags <span className="ml-2 bg-white px-1.5 py-0.5 rounded text-xs">{missingMetadata.length}</span>
@@ -89,7 +89,7 @@ export default function CleanupCenter() {
  media={media} 
  isSelected={false} 
  />
- <button className="absolute top-2 right-2 p-2 bg-red-500 text-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:bg-red-600">
+ <button className="absolute top-2 right-2 p-2 bg-red-500 text-slate-900 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:bg-red-600">
  <Trash2 className="w-4 h-4" />
  </button>
  </div>

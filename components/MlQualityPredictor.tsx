@@ -90,7 +90,7 @@ export default function MlQualityPredictor({ media, onBack, mlStatus }: MlQualit
  return (
  <div className="space-y-6">
  <div className="flex items-center justify-between">
- <button onClick={onBack} className="text-xs font-medium text-slate-500 hover:text-slate-900 :text-white transition-colors">
+ <button onClick={onBack} className="text-xs font-medium text-slate-500 hover:text-slate-900 :text-slate-900 transition-colors">
  ← Back to selection
  </button>
  </div>
@@ -104,7 +104,7 @@ export default function MlQualityPredictor({ media, onBack, mlStatus }: MlQualit
  </div>
  
  <div className="bg-slate-50 rounded-xl p-4 border border-slate-100 text-center">
- <h4 className="text-[10px] uppercase font-bold tracking-wider text-slate-400 mb-2">Random Forest Prediction</h4>
+ <h4 className="text-[10px] uppercase font-bold tracking-wider text-slate-500 mb-2">Random Forest Prediction</h4>
  <div className={`text-xl font-bold py-2 rounded-lg border ${getPredictionColor(data.prediction)}`}>
  {data.prediction}
  </div>
@@ -141,7 +141,7 @@ export default function MlQualityPredictor({ media, onBack, mlStatus }: MlQualit
  <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
  {Object.entries(data.features).map(([key, val]) => (
  <div key={key} className="bg-slate-50 p-3 rounded-lg border border-slate-100 ">
- <p className="text-[10px] uppercase font-bold text-slate-400 mb-1 truncate">{key}</p>
+ <p className="text-[10px] uppercase font-bold text-slate-500 mb-1 truncate">{key}</p>
  <p className="font-mono text-sm font-medium text-slate-700 ">{formatValue(key, val as number)}</p>
  </div>
  ))}

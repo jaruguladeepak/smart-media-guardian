@@ -42,20 +42,20 @@ export default function Topbar({ onUploadClick }: TopbarProps) {
  }, []);
 
  return (
- <header className="h-20 flex items-center justify-between px-4 sm:px-8 bg-[#0a0a0f]/80 backdrop-blur-md sticky top-0 z-30 border-b border-white/5">
+ <header className="h-20 flex items-center justify-between px-4 sm:px-8 bg-[#0a0a0f]/80 backdrop-blur-md sticky top-0 z-30 border-b border-slate-200">
  <div className="flex-1 flex items-center">
  <button 
  onClick={() => {
  const event = new KeyboardEvent('keydown', { key: 'k', ctrlKey: true });
  window.dispatchEvent(event);
  }}
- className="hidden md:flex items-center gap-3 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-slate-400 text-sm transition-colors w-64"
+ className="hidden md:flex items-center gap-3 px-4 py-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full text-slate-500 text-sm transition-colors w-64"
  >
  <Search className="w-4 h-4" />
  <span>Search MediaFlow...</span>
  <div className="ml-auto flex gap-1">
- <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] font-mono">Ctrl</kbd>
- <kbd className="px-1.5 py-0.5 rounded bg-white/10 text-[10px] font-mono">K</kbd>
+ <kbd className="px-1.5 py-0.5 rounded bg-slate-200 text-[10px] font-mono">Ctrl</kbd>
+ <kbd className="px-1.5 py-0.5 rounded bg-slate-200 text-[10px] font-mono">K</kbd>
  </div>
  </button>
  </div>
@@ -66,13 +66,13 @@ export default function Topbar({ onUploadClick }: TopbarProps) {
  <div className="hidden md:flex items-center gap-2 bg-slate-100 p-1 rounded-full border border-slate-200 ">
  <button 
  onClick={() => setDemoMode(false)}
- className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${!demoMode ? 'bg-white shadow-sm text-slate-800 ' : 'text-slate-400 hover:text-slate-600 :text-slate-300'}`}
+ className={`px-3 py-1 rounded-full text-xs font-bold transition-all ${!demoMode ? 'bg-white shadow-sm text-slate-800 ' : 'text-slate-500 hover:text-slate-600 :text-slate-600'}`}
  >
  LIVE
  </button>
  <button 
  onClick={() => setDemoMode(true)}
- className={`px-3 py-1 flex items-center gap-1 rounded-full text-xs font-bold transition-all ${demoMode ? 'bg-amber-100 shadow-sm text-amber-700 ' : 'text-slate-400 hover:text-slate-600 :text-slate-300'}`}
+ className={`px-3 py-1 flex items-center gap-1 rounded-full text-xs font-bold transition-all ${demoMode ? 'bg-amber-100 shadow-sm text-amber-700 ' : 'text-slate-500 hover:text-slate-600 :text-slate-600'}`}
  >
  <FlaskConical className="w-3 h-3" />
  DEMO
@@ -105,11 +105,11 @@ export default function Topbar({ onUploadClick }: TopbarProps) {
  <div className="relative" ref={dropdownRef}>
  <button 
  onClick={() => setShowNotifications(!showNotifications)}
- className="relative p-2 text-slate-400 hover:text-white transition-colors bg-white/5 rounded-full shadow-sm border border-white/10"
+ className="relative p-2 text-slate-500 hover:text-slate-900 transition-colors bg-slate-100 rounded-full shadow-sm border border-slate-200"
  >
  <Bell className="w-5 h-5" />
  {unreadCount > 0 && (
- <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold leading-none text-white transform translate-x-1/4 -translate-y-1/4 bg-red-500 rounded-full">
+ <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-bold leading-none text-slate-900 transform translate-x-1/4 -translate-y-1/4 bg-red-500 rounded-full">
  {unreadCount > 9 ? '9+' : unreadCount}
  </span>
  )}
@@ -135,7 +135,7 @@ export default function Topbar({ onUploadClick }: TopbarProps) {
  {activities.map((activity) => (
  <div 
  key={activity.id} 
- className={`p-4 transition-colors hover:bg-slate-50 :bg-slate-800/50 ${!activity.isRead ? 'bg-emerald-50/50 ' : ''}`}
+ className={`p-4 transition-colors hover:bg-slate-50 :bg-slate-100/50 ${!activity.isRead ? 'bg-emerald-50/50 ' : ''}`}
  onClick={() => !activity.isRead && markActivityRead(activity.id)}
  >
  <div className="flex items-start gap-3">
@@ -145,10 +145,10 @@ export default function Topbar({ onUploadClick }: TopbarProps) {
  {activity.description}
  </p>
  <div className="flex items-center gap-2 mt-1">
- <span className="text-xs text-slate-400">
+ <span className="text-xs text-slate-500">
  {new Date(activity.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
  </span>
- <span className="text-[10px] font-medium text-slate-400 uppercase">{activity.type}</span>
+ <span className="text-[10px] font-medium text-slate-500 uppercase">{activity.type}</span>
  </div>
  </div>
  </div>
@@ -165,9 +165,9 @@ export default function Topbar({ onUploadClick }: TopbarProps) {
  )}
  </div>
  
- <div className="flex items-center gap-3 pl-4 sm:pl-6 border-l border-white/10">
+ <div className="flex items-center gap-3 pl-4 sm:pl-6 border-l border-slate-200">
  <div className="text-right hidden sm:block">
- <p className="text-sm font-semibold text-white">Demo User</p>
+ <p className="text-sm font-semibold text-slate-900">Demo User</p>
  </div>
  <div className="w-10 h-10 rounded-full bg-indigo-500/20 overflow-hidden shadow-sm border border-indigo-500/30">
  <div className="w-full h-full flex items-center justify-center text-indigo-400">

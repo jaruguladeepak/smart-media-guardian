@@ -75,7 +75,7 @@ export default function KnowledgeGraphPage({ mediaList }: KnowledgeGraphPageProp
  x2={x2} y2={y2} 
  stroke="currentColor" 
  strokeWidth="2"
- className="text-slate-300 stroke-dasharray-4 animate-[dash_20s_linear_infinite]"
+ className="text-slate-600 stroke-dasharray-4 animate-[dash_20s_linear_infinite]"
  opacity="0.5"
  />
  );
@@ -87,7 +87,7 @@ export default function KnowledgeGraphPage({ mediaList }: KnowledgeGraphPageProp
  <div className="w-32 h-32 rounded-full border-4 border-fuchsia-500 shadow-[0_0_30px_rgba(217,70,239,0.3)] overflow-hidden relative bg-white">
  <Image src={activeNode.url} alt="Center Node" fill className="object-cover" />
  </div>
- <div className="mt-4 px-4 py-1.5 bg-slate-900 text-white rounded-full text-xs font-bold shadow-lg">
+ <div className="mt-4 px-4 py-1.5 bg-slate-50 text-slate-900 rounded-full text-xs font-bold shadow-lg">
  {activeNode.id.split('/').pop()}
  </div>
  </div>
@@ -148,7 +148,7 @@ export default function KnowledgeGraphPage({ mediaList }: KnowledgeGraphPageProp
  <p className="text-xs text-slate-500 mb-3">
  This node shares <strong className="text-slate-700 ">Semantic Tags</strong>, <strong className="text-slate-700 ">Visual Similarity</strong>, and <strong className="text-slate-700 ">Collections</strong> with {activeNode.connections.reduce((acc: number, curr: any) => acc + curr.relatedAssets, 0)} other assets in your library.
  </p>
- <button className="w-full px-3 py-1.5 bg-slate-100 hover:bg-slate-200 :bg-slate-700 text-slate-700 rounded text-xs font-medium transition-colors">
+ <button className="w-full px-3 py-1.5 bg-slate-100 hover:bg-slate-200 :bg-slate-200 text-slate-700 rounded text-xs font-medium transition-colors">
  Expand All Nodes
  </button>
  </div>

@@ -141,7 +141,7 @@ export default function AnalyticsDashboard() {
  <div className="w-full bg-emerald-500 rounded-t-sm transition-all duration-500 group-hover:bg-emerald-400" style={{ height: `${Math.max(heightPercent, 5)}%` }}></div>
  <div className="absolute -top-6 opacity-0 group-hover:opacity-100 transition-opacity text-xs font-bold text-slate-700 ">{count}</div>
  </div>
- <span className="text-[10px] text-slate-400 mt-2">{hour}</span>
+ <span className="text-[10px] text-slate-500 mt-2">{hour}</span>
  </div>
  );
  })}

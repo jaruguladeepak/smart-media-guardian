@@ -124,7 +124,7 @@ export default function VisionLabPage({ mediaList, onUploadClick }: VisionLabPag
  <div key={i} className="h-2 rounded-[1px]" style={{ backgroundColor: `rgba(99,102,241, ${Math.random() * 0.8 + 0.2})` }}></div>
  ))}
  </div>
- <div className="text-xs text-indigo-300 mt-3 font-mono break-all leading-relaxed bg-black/40 p-2 rounded">
+ <div className="text-xs text-indigo-300 mt-3 font-mono break-all leading-relaxed bg-white/40 p-2 rounded">
  [ {visionData.embeddingPreview.map((v: number) => v.toFixed(3)).join(', ')} ... ]
  </div>
  </div>
@@ -144,7 +144,7 @@ export default function VisionLabPage({ mediaList, onUploadClick }: VisionLabPag
  <span className="text-slate-700">{pred.label}</span>
  <span className="text-emerald-400 font-bold">{(pred.confidence * 100).toFixed(1)}%</span>
  </div>
- <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+ <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden">
  <div className="h-full bg-emerald-500 rounded-full" style={{ width: `${pred.confidence * 100}%` }}></div>
  </div>
  </div>

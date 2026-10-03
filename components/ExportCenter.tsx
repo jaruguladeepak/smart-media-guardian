@@ -102,7 +102,7 @@ export default function ExportCenter({ media }: ExportCenterProps) {
  <button
  onClick={handleGenerate}
  disabled={isGenerating}
- className="w-full sm:w-auto px-6 py-2.5 bg-slate-900 text-white font-medium rounded-xl hover:bg-slate-800 :bg-slate-100 transition-colors disabled:opacity-50 flex items-center justify-center"
+ className="w-full sm:w-auto px-6 py-2.5 bg-slate-50 text-slate-900 font-medium rounded-xl hover:bg-slate-100 :bg-slate-100 transition-colors disabled:opacity-50 flex items-center justify-center"
  >
  {isGenerating ? (
  <>
@@ -129,7 +129,7 @@ export default function ExportCenter({ media }: ExportCenterProps) {
  <a 
  href={exportUrl}
  download
- className="flex items-center px-4 py-2 border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 :bg-slate-800 transition-colors"
+ className="flex items-center px-4 py-2 border border-slate-200 text-slate-700 font-medium rounded-lg hover:bg-slate-50 :bg-slate-100 transition-colors"
  >
  <Download className="w-4 h-4 mr-2" /> Download
  </a>

@@ -31,7 +31,7 @@ export default function CompareSlider({ originalSrc, transformedSrc, isVideo }: 
  return (
  <div 
  ref={containerRef}
- className="relative w-full h-[400px] sm:h-[500px] overflow-hidden rounded-xl bg-slate-900 select-none cursor-ew-resize group"
+ className="relative w-full h-[400px] sm:h-[500px] overflow-hidden rounded-xl bg-slate-50 select-none cursor-ew-resize group"
  onMouseMove={onMouseMove}
  onTouchMove={onTouchMove}
  onClick={(e) => handleMove(e.clientX)}
@@ -68,10 +68,10 @@ export default function CompareSlider({ originalSrc, transformedSrc, isVideo }: 
  </div>
 
  {/* Labels */}
- <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md text-white text-xs font-medium px-2 py-1 rounded shadow-sm z-20 pointer-events-none">
+ <div className="absolute top-4 left-4 bg-white/60 backdrop-blur-md text-slate-900 text-xs font-medium px-2 py-1 rounded shadow-sm z-20 pointer-events-none">
  Original
  </div>
- <div className="absolute top-4 right-4 bg-indigo-600/90 backdrop-blur-md text-white text-xs font-medium px-2 py-1 rounded shadow-sm z-20 pointer-events-none">
+ <div className="absolute top-4 right-4 bg-indigo-600/90 backdrop-blur-md text-slate-900 text-xs font-medium px-2 py-1 rounded shadow-sm z-20 pointer-events-none">
  Optimized
  </div>
  </div>

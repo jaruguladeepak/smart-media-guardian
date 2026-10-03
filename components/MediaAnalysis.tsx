@@ -77,7 +77,7 @@ export default function MediaAnalysis({ media, onUpdate }: MediaAnalysisProps) {
  <button
  onClick={handleAnalyze}
  disabled={isAnalyzing}
- className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
+ className="inline-flex items-center px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-slate-900 text-sm font-medium rounded-lg transition-colors disabled:opacity-50"
  >
  {isAnalyzing ? (
  <Loader2 className="w-4 h-4 mr-1.5 animate-spin" />
@@ -147,7 +147,7 @@ export default function MediaAnalysis({ media, onUpdate }: MediaAnalysisProps) {
  <div>
  <button 
  onClick={() => toggleFavorite(media.publicId)}
- className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border font-medium transition-all ${currentMetadata.isFavorite ? 'bg-amber-50 text-amber-600 border-amber-200 hover:bg-amber-100 ' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 :bg-slate-800'}`}
+ className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border font-medium transition-all ${currentMetadata.isFavorite ? 'bg-amber-50 text-amber-600 border-amber-200 hover:bg-amber-100 ' : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 :bg-slate-100'}`}
  >
  <Star className={`w-4 h-4 ${currentMetadata.isFavorite ? 'fill-current' : ''}`} /> 
  {currentMetadata.isFavorite ? 'Favorited' : 'Add to Favorites'}
@@ -216,7 +216,7 @@ export default function MediaAnalysis({ media, onUpdate }: MediaAnalysisProps) {
  <div key={activity.id} className="relative pl-4">
  <div className="absolute -left-1 top-1.5 w-2 h-2 rounded-full bg-indigo-500 ring-4 ring-white "></div>
  <p className="text-sm font-medium text-slate-700 ">{activity.description}</p>
- <p className="text-xs text-slate-400 mt-0.5">
+ <p className="text-xs text-slate-500 mt-0.5">
  {new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(new Date(activity.timestamp))}
  </p>
  </div>

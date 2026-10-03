@@ -28,10 +28,10 @@ export default function MediaCard({ media, onClick, isSelected }: MediaCardProps
 
  return (
  <div 
- className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all bg-[#111118] border ${
+ className={`group relative rounded-2xl overflow-hidden cursor-pointer transition-all bg-slate-50 border ${
  isSelected 
  ? 'border-indigo-500 shadow-[0_0_20px_rgba(99,102,241,0.2)] scale-[1.02]' 
- : 'border-white/5 hover:border-white/20'
+ : 'border-slate-200 hover:border-slate-300'
  }`}
  onClick={onClick}
  >
@@ -45,12 +45,12 @@ export default function MediaCard({ media, onClick, isSelected }: MediaCardProps
  unoptimized
  />
  ) : (
- <div className="relative w-full h-full flex items-center justify-center bg-black">
+ <div className="relative w-full h-full flex items-center justify-center bg-white">
  <video 
  src={media.secureUrl} 
  className="absolute inset-0 w-full h-full object-cover opacity-50"
  />
- <PlayCircle className="w-12 h-12 text-white z-10" />
+ <PlayCircle className="w-12 h-12 text-slate-900 z-10" />
  </div>
  )}
  
@@ -59,7 +59,7 @@ export default function MediaCard({ media, onClick, isSelected }: MediaCardProps
  <div className="absolute top-3 right-3 z-20">
  <button 
  onClick={handleFavoriteClick}
- className={`p-2 rounded-full backdrop-blur-md transition-all ${isFavorite ? 'bg-amber-500/90 text-white' : 'bg-black/40 text-white/70 hover:bg-black/60 hover:text-white'}`}
+ className={`p-2 rounded-full backdrop-blur-md transition-all ${isFavorite ? 'bg-amber-500/90 text-slate-900' : 'bg-white/40 text-slate-900/70 hover:bg-white/60 hover:text-slate-900'}`}
  >
  <Star className={`w-4 h-4 ${isFavorite ? 'fill-current' : ''}`} />
  </button>
@@ -68,26 +68,26 @@ export default function MediaCard({ media, onClick, isSelected }: MediaCardProps
  
  <div className="p-4 flex flex-col gap-3">
  <div className="flex items-center justify-between">
- <p className="text-white text-sm font-medium truncate flex-1 mr-2">{media.publicId.split('/').pop()}</p>
- <span className="text-[10px] text-slate-500 uppercase tracking-wider bg-white/5 px-2 py-1 rounded">{media.format}</span>
+ <p className="text-slate-900 text-sm font-medium truncate flex-1 mr-2">{media.publicId.split('/').pop()}</p>
+ <span className="text-[10px] text-slate-500 uppercase tracking-wider bg-slate-100 px-2 py-1 rounded">{media.format}</span>
  </div>
 
  <div className="space-y-1.5">
  <div className="flex items-center justify-between text-xs">
- <span className="text-slate-400">Quality</span>
+ <span className="text-slate-500">Quality</span>
  <span className={`font-semibold ${qualityScore >= 90 ? 'text-emerald-400' : qualityScore >= 80 ? 'text-blue-400' : 'text-amber-400'}`}>{qualityScore}</span>
  </div>
  <div className="flex items-center justify-between text-xs">
- <span className="text-slate-400">Similarity</span>
- <span className="text-white font-medium">{similarityScore}%</span>
+ <span className="text-slate-500">Similarity</span>
+ <span className="text-slate-900 font-medium">{similarityScore}%</span>
  </div>
  <div className="flex items-center justify-between text-xs">
- <span className="text-slate-400">Anomaly</span>
- <span className={`font-medium ${anomalyLevel === 'LOW' ? 'text-slate-300' : anomalyLevel === 'MED' ? 'text-amber-400' : 'text-red-400'}`}>{anomalyLevel}</span>
+ <span className="text-slate-500">Anomaly</span>
+ <span className={`font-medium ${anomalyLevel === 'LOW' ? 'text-slate-600' : anomalyLevel === 'MED' ? 'text-amber-400' : 'text-red-400'}`}>{anomalyLevel}</span>
  </div>
  </div>
 
- <div className="pt-3 mt-1 border-t border-white/5 flex flex-wrap items-center gap-2">
+ <div className="pt-3 mt-1 border-t border-slate-200 flex flex-wrap items-center gap-2">
  {(!media.moderation || media.moderation.status === 'safe') ? (
  <span className="text-[10px] font-medium text-emerald-400/90 flex items-center bg-emerald-400/10 px-1.5 py-0.5 rounded">
  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5"></span> Safe

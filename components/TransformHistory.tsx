@@ -25,7 +25,7 @@ export default function TransformHistory({ media, onApplyOptions }: TransformHis
  </div>
  <div className="divide-y divide-slate-100 max-h-[300px] overflow-y-auto">
  {history.map((entry) => (
- <div key={entry.id} className="p-4 hover:bg-slate-50 :bg-slate-800/50 transition-colors flex items-center justify-between group">
+ <div key={entry.id} className="p-4 hover:bg-slate-50 :bg-slate-100/50 transition-colors flex items-center justify-between group">
  <div className="flex-1 min-w-0 pr-4">
  <div className="flex items-center justify-between mb-1">
  <p className="text-sm font-medium text-slate-900 truncate">

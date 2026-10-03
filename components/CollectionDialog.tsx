@@ -38,7 +38,7 @@ export default function CollectionDialog({ onClose, publicIds }: CollectionDialo
  };
 
  return (
- <div className="fixed inset-0 z-[100] bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+ <div className="fixed inset-0 z-[100] bg-slate-50/50 backdrop-blur-sm flex items-center justify-center p-4">
  <div className="bg-white border border-slate-200 rounded-2xl w-full max-w-md shadow-2xl overflow-hidden animate-in zoom-in-95 duration-200">
  
  <div className="p-5 border-b border-slate-100 flex items-center justify-between bg-slate-50 ">
@@ -46,7 +46,7 @@ export default function CollectionDialog({ onClose, publicIds }: CollectionDialo
  <FolderPlus className="w-5 h-5 mr-2 text-indigo-500" /> 
  Add to Collection
  </h2>
- <button onClick={onClose} className="text-slate-400 hover:text-slate-600 :text-slate-200 transition-colors">
+ <button onClick={onClose} className="text-slate-500 hover:text-slate-600 :text-slate-700 transition-colors">
  <X className="w-5 h-5" />
  </button>
  </div>
@@ -66,10 +66,10 @@ export default function CollectionDialog({ onClose, publicIds }: CollectionDialo
  <button
  key={c.id}
  onClick={() => handleAddToCollection(c.id, c.name)}
- className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 :bg-slate-800 transition-colors border border-transparent hover:border-slate-200 :border-slate-700 text-left"
+ className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 :bg-slate-100 transition-colors border border-transparent hover:border-slate-200 :border-slate-300 text-left"
  >
  <div className="flex items-center min-w-0">
- <Folder className="w-5 h-5 mr-3 text-slate-400" />
+ <Folder className="w-5 h-5 mr-3 text-slate-500" />
  <div className="truncate">
  <p className="text-sm font-medium text-slate-900 truncate">{c.name}</p>
  {c.description && <p className="text-xs text-slate-500 truncate">{c.description}</p>}
@@ -115,14 +115,14 @@ export default function CollectionDialog({ onClose, publicIds }: CollectionDialo
  <button 
  type="button" 
  onClick={() => setIsCreating(false)}
- className="flex-1 px-4 py-2 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-slate-200 :bg-slate-700 transition-colors"
+ className="flex-1 px-4 py-2 bg-slate-100 text-slate-700 font-medium rounded-xl hover:bg-slate-200 :bg-slate-200 transition-colors"
  >
  Cancel
  </button>
  <button 
  type="submit" 
  disabled={!newTitle.trim()}
- className="flex-1 px-4 py-2 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-50"
+ className="flex-1 px-4 py-2 bg-indigo-600 text-slate-900 font-medium rounded-xl hover:bg-indigo-700 transition-colors disabled:opacity-50"
  >
  Create
  </button>

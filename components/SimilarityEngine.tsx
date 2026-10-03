@@ -79,7 +79,7 @@ export default function SimilarityEngine({ media }: SimilarityEngineProps) {
  return (
  <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm">
  <h3 className="text-sm font-bold text-slate-500 uppercase tracking-wider mb-2">Similarity Engine</h3>
- <p className="text-sm text-slate-400">No visually similar assets found in library.</p>
+ <p className="text-sm text-slate-500">No visually similar assets found in library.</p>
  </div>
  );
  }
@@ -109,23 +109,23 @@ export default function SimilarityEngine({ media }: SimilarityEngineProps) {
  <div className="flex items-center gap-4 w-full justify-center">
  <div className="relative w-32 h-32 rounded-lg overflow-hidden border border-slate-200 shadow-sm">
  <Image src={media.secureUrl} alt="Target" fill className="object-cover" />
- <div className="absolute inset-x-0 bottom-0 bg-black/60 text-white text-[10px] text-center py-1">TARGET</div>
+ <div className="absolute inset-x-0 bottom-0 bg-white/60 text-slate-900 text-[10px] text-center py-1">TARGET</div>
  </div>
 
- <div className="flex flex-col items-center text-slate-300 ">
+ <div className="flex flex-col items-center text-slate-600 ">
  <ArrowRight className="w-6 h-6" />
  <span className="text-[10px] font-bold mt-1 tracking-widest">{topMatch.similarity}%</span>
  </div>
 
  <div className="relative w-32 h-32 rounded-lg overflow-hidden border border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.3)]">
  <Image src={matchedMedia.secureUrl} alt="Match" fill className="object-cover" />
- <div className="absolute inset-x-0 bottom-0 bg-indigo-600 text-white text-[10px] text-center py-1 font-bold">MATCH</div>
+ <div className="absolute inset-x-0 bottom-0 bg-indigo-600 text-slate-900 text-[10px] text-center py-1 font-bold">MATCH</div>
  </div>
  </div>
 
  {topMatch.similarity > 90 && (
  <div className="mt-6 w-full flex justify-center gap-3">
- <button className="px-4 py-1.5 text-xs font-bold bg-white border border-slate-200 rounded-lg hover:bg-slate-50 :bg-slate-700 transition-colors">
+ <button className="px-4 py-1.5 text-xs font-bold bg-white border border-slate-200 rounded-lg hover:bg-slate-50 :bg-slate-200 transition-colors">
  Compare Side-by-Side
  </button>
  <button className="px-4 py-1.5 text-xs font-bold bg-red-50 text-red-600 border border-red-100 rounded-lg hover:bg-red-100 :bg-red-900/40 transition-colors">

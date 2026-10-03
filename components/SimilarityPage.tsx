@@ -77,7 +77,7 @@ export default function SimilarityPage({ mediaList, onUploadClick }: SimilarityP
  <span className="text-lg font-bold text-slate-700 ">Uploaded</span>
  </div>
 
- <ArrowRight className="w-8 h-8 text-slate-400" />
+ <ArrowRight className="w-8 h-8 text-slate-500" />
 
  <div className="flex-shrink-0 flex flex-col items-center">
  <div className="relative w-40 h-40 rounded-lg border-2 border-indigo-500 border-dashed mb-3 shadow-sm flex items-center justify-center bg-slate-50 ">

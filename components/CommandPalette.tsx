@@ -39,22 +39,22 @@ export default function CommandPalette({ isOpen, onClose, onNavigate }: CommandP
  const filteredCommands = commands.filter(c => c.label.toLowerCase().includes(search.toLowerCase()));
 
  return (
- <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-start justify-center pt-[15vh] p-4">
+ <div className="fixed inset-0 z-[100] bg-white/60 backdrop-blur-sm flex items-start justify-center pt-[15vh] p-4">
  <div 
- className="w-full max-w-2xl bg-[#0d0d12] border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+ className="w-full max-w-2xl bg-[#0d0d12] border border-slate-200 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
  onClick={(e) => e.stopPropagation()}
  >
- <div className="flex items-center px-4 py-3 border-b border-white/10">
- <Search className="w-5 h-5 text-slate-400 mr-3" />
+ <div className="flex items-center px-4 py-3 border-b border-slate-200">
+ <Search className="w-5 h-5 text-slate-500 mr-3" />
  <input 
  autoFocus
  type="text" 
  placeholder="Search MediaFlow..." 
- className="flex-1 bg-transparent border-none outline-none text-white placeholder:text-slate-500 text-lg"
+ className="flex-1 bg-transparent border-none outline-none text-slate-900 placeholder:text-slate-500 text-lg"
  value={search}
  onChange={(e) => setSearch(e.target.value)}
  />
- <div className="text-xs text-slate-500 bg-white/5 px-2 py-1 rounded">ESC</div>
+ <div className="text-xs text-slate-500 bg-slate-100 px-2 py-1 rounded">ESC</div>
  </div>
  
  <div className="max-h-[60vh] overflow-y-auto p-2">
@@ -75,11 +75,11 @@ export default function CommandPalette({ isOpen, onClose, onNavigate }: CommandP
  }
  onClose();
  }}
- className="w-full flex items-center px-4 py-3 text-left hover:bg-white/5 rounded-xl transition-colors group"
+ className="w-full flex items-center px-4 py-3 text-left hover:bg-slate-100 rounded-xl transition-colors group"
  >
- <cmd.icon className="w-5 h-5 text-slate-400 group-hover:text-white mr-4 transition-colors" />
+ <cmd.icon className="w-5 h-5 text-slate-500 group-hover:text-slate-900 mr-4 transition-colors" />
  <div className="flex-1">
- <span className="text-sm font-medium text-slate-200 group-hover:text-white transition-colors">{cmd.label}</span>
+ <span className="text-sm font-medium text-slate-700 group-hover:text-slate-900 transition-colors">{cmd.label}</span>
  </div>
  <span className="text-[10px] text-slate-500 uppercase tracking-wider">{cmd.section}</span>
  </button>
