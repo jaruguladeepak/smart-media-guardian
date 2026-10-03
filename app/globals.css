@@ -12,12 +12,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #050505;
-    --foreground: #ededed;
-  }
-}
+/* Removed dark mode preference to force light theme */
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
